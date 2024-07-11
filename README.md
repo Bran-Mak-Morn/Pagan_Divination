@@ -20,7 +20,7 @@ Pohanská on-line věštba pro Vikingy, Slovany a Kelty. Webová aplikace - dyna
 
 ### Web Pages View
 
-- https://bran-mak-morn.github.io/DansDen/
+- https://pagan-divination.onrender.com/
 
 ## Project Highlights
 
