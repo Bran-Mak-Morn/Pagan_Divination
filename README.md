@@ -1,6 +1,8 @@
 # Pagan_Divination
+Flask & Bootstrap Web App projekt
+
 ## Overview
-Flask & Bootstrap Web App projekt - Pohanská on-line věštba pro Vikingy, Slovany a Kelty. Webová aplikace má dynamické a plně responzivní stránky.
+Pohanská on-line věštba pro Vikingy, Slovany a Kelty. Webová aplikace - dynamické a plně responzivní stránky.
 
 ## Files
 
