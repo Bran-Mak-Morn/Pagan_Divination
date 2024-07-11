@@ -31,11 +31,16 @@ def divination(tribe):
     elif tribe == "slavic":
         god_data = random.choice(slavic_gods)
     else:
-        god_data = "No such tribe"
+        god_data = "No such god or goddess"
         return render_template("error.html", error=god_data, tribe=tribe)
 
     god_introduction = introduce_god(god_data.gender)
     return render_template("divination.html", divination=god_data, introduction=god_introduction)
+
+
+@app.route("/kontakt")
+def contact():
+    return render_template("contact.html")
 
 
 if __name__ == "__main__":
