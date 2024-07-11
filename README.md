@@ -24,7 +24,7 @@ Pohanská on-line věštba pro Vikingy, Slovany a Kelty. Webová aplikace - dyna
 
 ## Project Highlights
 
-- **Idea**: Showcase of passion & idea turned into a functional and enjoyable web app.
+- **Idea**: Showcase of passion & knowledge turned into a functional and enjoyable web app.
 - **Layout**: Demonstrates the use of friendly and engaging UX.
 - **Bootstrap use**: Shows the ability in using Bootstrap, HTML & CSS.
 - **Responsive web design**: Shows proficiency in creating a modern web that works on a variety of different size displays.
