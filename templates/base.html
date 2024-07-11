@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Base title{% endblock %}</title>
+    {% block mystyle %}{% endblock %}
+
+    {{ bootstrap.load_css() }}
+</head>
+
+<body>
+
+<main>
+<!-- NAVBAR -->
+{% include "navbar.html" %}
+
+{% block content %}
+
+{% endblock %}
+
+<!-- FOOTER -->
+{% include "footer.html" %}
+</main>
+{{ bootstrap.load_js() }}
+</body>
+
+</html>
