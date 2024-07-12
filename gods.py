@@ -125,7 +125,7 @@ simargl = God("Simargl", "M",
 slavic_gods = [rod, lada, triglav, svarog, perun, veles, mokos, nij, dazbog, chors,
                morana, dij, ziva, kascej, stribog, simargl]
 
-
+error_god = God("neznámý bůh", "X", "nebyl stvořen - neznámý bůh")
 # print(len(viking_gods), len(celtic_gods), len(slavic_gods))
 
 
