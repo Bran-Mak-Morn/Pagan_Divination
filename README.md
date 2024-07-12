@@ -2,7 +2,7 @@
 Flask & Bootstrap Web App projekt
 
 ## Overview
-Pohanská on-line věštba pro Vikingy, Slovany a Kelty. Webová aplikace - dynamické a plně responzivní stránky.
+Pohanská webová aplikace - Objev svého ochránce a patrona mezi vikingskými, slovanskými a keltskými bohy. Dynamické a plně responzivní stránky.
 
 ## Files
 
