@@ -15,7 +15,6 @@ Pohanská on-line věštba pro Vikingy, Slovany a Kelty. Webová aplikace - dyna
 - `base.html`: base page be extended by children templates
 - `navbar.html`: navbar element to be included in base.html
 - `footer.html`: footer element to be included in base.html
-- `error.html`: error page
 
 ## Setup
 
