@@ -12,7 +12,7 @@ Pohanská webová aplikace - Objev svého ochránce a patrona mezi vikingskými,
 - `index.html`: landing page, where you can choose the divination type
 - `divination.html`: individual divination page, generated dynamically
 - `contact.html`: contact information
-- `base.html`: base page be extended by children templates
+- `base.html`: base page to be extended by children templates
 - `navbar.html`: navbar element to be included in base.html
 - `footer.html`: footer element to be included in base.html
 
