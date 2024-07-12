@@ -13,11 +13,15 @@
         <div class="col-lg-6 mx-auto">
           <p class="lead mb-4">{{ divination.description }}</p>
 
-          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-            <button type="button" class="btn btn-primary btn-lg px-4 gap-3">
-                <a href="{{ url_for('contact') }}" class="text-decoration-none text-white">Kontakt</a></button>
+          <div class="justify-content-sm-center">
             <button type="button" class="btn btn-outline-secondary btn-lg px-4" >
                 <a href="{{ url_for('index') }}" class="text-decoration-none text-dark">Jdi zpět</a></button>
+
+          </div>
+          <div class="mt-4 justify-content-sm-center">
+              <h2 class="fw-semibold fs-5 text-body-emphasis fc-white">O vývoji webové aplikace "Moje kořeny"</h2>
+            <button type="button" class="btn btn-success btn-lg px-4 gap-3 mt-3" >
+                <a href="{{ url_for('web_app_development') }}" class="text-decoration-none text-white">Vývoj web app</a></button>
           </div>
 
         </div>
