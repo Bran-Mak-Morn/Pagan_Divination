@@ -51,7 +51,7 @@
                     <p >Nejdříve jsem převedl myšlenku jako návrh na papír. Výsledkem bylo grafické schéma, kde jsem vyřešil fungování, <span class="bold">routing</span> a propojení mezi stránkami a předávání proměnných.</p>
                     <p>Následovalo vlastní naprogramování, v tomto případě to znamenalo <span class="bold">kombinaci Python a frameworku Flask</span>. Jednotlivé webové stránky jsem v tuto chvíli řešil pouze natvrdo napsaným HTML kódem, který fungoval primárně jako ověření správného propojení mezi stránkami. Do rout pro jednotlivé stránky jsem přidal parametry a pomocí Jinja jsem je znázornil ve výsledném HTML. Přidal jsem tlačítka a odkazy a ověřil správné fungování.</p>
                     <p>Obsah, tedy generování konkrétního boha / bohyně ze tří náboženství (Vikingové, Slovani a Kelti), probíhá pomocí pythonní funkce z <span class="bold">modulu random</span>. Data pro jednotlivé bohy (jména, popis) jsou výsledkem mé práce a zájmu o raný středověk. Nyní se mi to hodilo a nemusel jsem využívat nic cizího. Využil jsem <span class="bold">OOP</span> a navrhnul jsem si třídu „God“, kde jsem postupně vytvořil <span class="bold">instance jednotlivých božstev</span> a rozdělil je do tří skupin. Přidal jsem hlavní rys aplikace, kdy při výběru konkrétního náboženství dojde k náhodnému výběru jednoho z jejich bohů a výsledek se zobrazí na nové stránce, která je <span class="bold">dynamicky generovaná</span>. Otestoval jsem, že to funguje tak, jak chci.
-                        Přišel čas nahodit vizuál a pohrát si trochu s frontendem.</p>
+                        V dalším kroku bude potřeba pořešit vizuál a frontend.</p>
 
                 </div>
 
@@ -68,8 +68,8 @@
                       <p class="lead">skills: 	<strong>Jinja</strong>, <strong>HTML</strong>, CSS & <strong>Bootstrap</strong></p>
                       <p class="lead">čas: 	ráno na Bootstrap, HTML a CSS</p>
                       <p class="lead">	odpoledne na procházení a výběr obrázků do carouselu</p>
-                      <p>Nastal čas nahradit provizorní <span class="bold">hardcoded HTML</span> něčím lepším a zároveň si práci zjednodušit. Nejdříve jsem si navrhnul vlastní layout stránek na papír. Poté jsem si vybral <span class="bold">Bootstrap komponenty</span>, které se pro můj návrh hodily a vyzkoušel, jak moc se to přibližuje mé představě. Když jsem došel k názoru, že OK, nastal čas na další krok. </p>
-                      <p>Ve stylu <span class="bold">Divide et Impera</span> a v souladu s principy programování a <span class="bold">reusability kódu</span> jsem, místo tvorby kompletních jednotlivých web stránek, vytvořil základní šablonu „base.html“, pomocí <span class="bold">Jinja</span> do ní přidal komponenty pro navigaci a patičku a tuto šablonu jsem pak „podědil“ pro jednotlivé web stránky. Jinja v těchto stránkách také obstarává používání proměnných z backendu. Díky tomu mohu v budoucnosti snadno měnit jednotlivé součásti (hlavička, patička, tělo) na všech stránkách najednou a případně tyto části použít na jiný projekt. Na stránkách jsem jemně dostyloval drobnosti typu tlačítka, odkazy, velikost a formát písma pomocí Bootstrap i vlastních CSS tříd.</p>
+                      <p>Přišel čas nahradit provizorní <span class="bold">hardcoded HTML</span> něčím lepším a zároveň si práci zjednodušit. Nejdříve jsem si navrhnul vlastní layout stránek. Poté jsem si vybral <span class="bold">Bootstrap komponenty</span>, které se pro můj návrh hodily a vyzkoušel, jak moc se to přibližuje mé představě. Když jsem došel k názoru, že OK, přistoupil jsem k dalšímu kroku. </p>
+                      <p>Ve stylu <span class="bold">Divide et Impera</span> a v souladu s principy programování a <span class="bold">reusability kódu</span> jsem, místo tvorby kompletních jednotlivých web stránek, vytvořil základní šablonu „base.html“, pomocí <span class="bold">Jinja</span> do ní přidal komponenty pro navigaci a patičku a tuto šablonu jsem pak „podědil“ pro jednotlivé web stránky. Jinja v těchto stránkách také obstarává používání proměnných z backendu. Díky tomu mohu v budoucnosti snadno měnit jednotlivé součásti (hlavička, patička, tělo) na všech stránkách najednou a případně tyto části použít na jiný projekt. Na stránkách jsem jemně dostyloval drobnosti typu tlačítka, odkazy, velikost a formát písma pomocí Bootstrap i <span class="bold">vlastních CSS tříd</span>.</p>
                       <p><span class="bold">Cherry-on-the-top</span> byl finální výběr obrázků pro carousel na úvodní stránce, jejich úpravy (velikost) a posouzení, jak moc jdou s duchem appky. Otestoval jsem si funkčnost a reakce generovaných stránek.</p>
                       <p></p>
 
@@ -83,9 +83,8 @@
                     <h2 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 fs-3">3. Kontrola a testování</h2>
                     <p class="lead">skills: 	pozornost a pečlivost</p>
                     <p class="lead">čas: cca 2h</p>
-                    <p>Před nasazením do provozu jsem provedl ještě <span class="bold">výstupní kontrolu</span>, zda vše funguje a přesměrovává  jak má a také jsem finálně zkontroloval vzhled a responzivitu. </p>
-                    <p class="italic">Jsou to právě ty malé drobné věci, chybky, nedokonalosti nebo chuť vylepšit ještě tohle a tamto, které dokážou zabrat víc času než samotné programování</p>
-                    <p>Pokud tomu člověk propadne přespříliš, bude stále hledat způsoby, jak to vylepšit nebo jaké lepší nástroje, jazyk a frameworky použít, ale k akci - dokončení, spuštění a zveřejnění projektu - nikdy nedojde.</p>
+                    <p>Před nasazením do provozu jsem provedl <span class="bold">výstupní kontrolu</span>, zda vše funguje a přesměrovává  jak má a také jsem finálně zkontroloval vzhled a responzivitu. </p>
+                    <p>Moje zkušenost: <span class="italic">"Jsou to právě ty malé drobné věci, chybky, nedokonalosti nebo chuť vylepšit ještě tohle a tamto, které dokážou zabrat víc času než samotné programování. Pokud tomu člověk propadne přespříliš, bude stále hledat způsoby, jak to vylepšit nebo jaké lepší nástroje, jazyk a frameworky použít, ale k akci - dokončení, spuštění a zveřejnění projektu - nikdy nedojde."</span></p>
                 </div>
 
                 <div class="col-lg-6">
@@ -105,24 +104,23 @@
                     <h2 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 fs-3">5. Marketing aneb let the world know </h2>
                     <p class="lead">skills: FB, LinkedIn, prodejní kanály</p>
                     <p class="lead">čas: cca 2h</p>
-                    <p>Nyní nastal <span class="bold">čas na marketing a propagaci</span>, aneb dát o své web apce vědět. Protože je to hobby projekt, nemusím to moc řešit a využiju <span class="bold">sociální sítě</span>, kam hodím příspěvek a link. Využiju i další možnosti díky svému eshopu <strong>www.pagania.cz</strong> - dám link na Pagania stránky a přidám jej do každého emailu, který obdrží zákazník spolu s objednávkou z eshopu.</p>
-                    <p>V appce mám v navigaci odkazy na své další zájmové a odborné aktivity (E-shop, Youtube channel, Spotify podcasty, články .. ) v hlavičce. V patičce uvádím profesionální část - kontaktní údaje a pracovní profil (LinkedIn, osobní web, profesní články)</p>
-                    <p><span class="italic">Zužitkováním těchto postupů maximalizuji rozsah a dosah pomocí kanálů a možností, které mám</span>. V zásadě může appka pomoci zvýšit povědomí o mých dalších projektech a stejně tak mohou mé projekty a zájmy zvýšit zájem o mou aplikaci. Za mě je to <span class="bold">win-win</span> :)</p>
+                    <p>Nyní nastal <span class="bold">čas na marketing a propagaci</span>, aneb dát o své web apce vědět. Využívám osobní i profesní <span class="bold">sociální sítě</span>, kam přidávím příspěvek a link. Využivám i další možnosti díky svému vikingskému eshopu <strong>www.pagania.cz</strong> - dám link na stránky a přidávám jej do každého emailu, který obdrží zákazník spolu s objednávkou.</p>
+                    <p>V appce mám v navigaci odkazy na své další zájmové a odborné aktivity (E-shop, Youtube channel, Spotify podcasty, články .. ) v hlavičce. V patičce uvádím profesní část - kontaktní údaje a pracovní profil (LinkedIn, osobní web, profesní články)</p>
+                    <p><span class="italic">Zužitkováním těchto postupů maximalizuji rozsah a dosah pomocí kanálů a možností, které mám</span>. V zásadě může appka pomoci zvýšit povědomí o mých dalších projektech a stejně tak mohou mé projekty a zájmy zvýšit zájem o mou aplikaci. Za mě je to <span class="bold">win-win</span> kombinace</p>
                 </div>
 
                 <div class="col-lg-6">
                       <h2 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 fs-3">6. Future development aneb co s apkou dál</h2>
                       <p class="lead">skills: Flask, <strong>SQLAlchemy</strong> & whatever necessary</p>
                     <p class="lead">čas: cokoliv</p>
-                      <p>Tuto <span class="bold">web app</span> jsem vytvořil pro radost, protože mě to baví a chtěl jsem zapraktikovat naučené znalosti na svém vlastním projektu</p>
-                      <p>Na základě feedbacku a vlastních myšlenek mohu aplikaci upravit a dále rozvíjet.
-                      <p>Do budoucna přidám <span class="bold">databázi a Rest API</span> – pro jednotlivé bohy. Možná také rozšířím počet jednotlivých bohů a náboženství nebo přidám i jiné mechaniky pro výběr a věštění :)</p>
+                      <p>Tuto <span class="bold">web app</span> jsem vytvořil pro radost, protože mě to baví a také jsem si chtěl zapraktikovat naučené znalosti na svém vlastním projektu.</p>
+                      <p>Na základě feedbacku a vlastních myšlenek mohu aplikaci upravit a dále rozvíjet. Do budoucna přidám <span class="bold">databázi a Rest API</span> – skupiny bohů pro jednotlivá náboženství - k volnému užívání. Možná také rozšířím počet jednotlivých bohů a náboženství nebo přidám i jiné mechaniky pro výběr a věštění.</p>
                   </div>
 
                   <div class="col-lg-12">
                     <h2 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 fs-3">7. Závěr</h2>
                       <p>Při tvorbě této <strong>webová aplikace</strong> jsem využil zkušenosti s backend i frontend vývojem (<span class="bold">UX a UI design</span>). Po dokončení a otestování jsem ji deploynul a zpřístupnil k volnému on-line použití. Aplikaci jsem pojal jako <strong>fullstack projekt</strong> a využil jsem dostupné nástroje <span class="bold">marketingu a propagace</span>.</p>
-                      <p>V rámci tvorby tohoto projektu jsem také pracoval s <span class="bold">osobním i produktovým brandem</span> (<a href="https://georgefreedom.com" class="text-decoration-none text-body-primary bold">GeorgeFreedom.com</a>, <a href="https://pagania.cz" class="text-decoration-none text-body-primary bold">PAGANIA.cz</a>). Svou zkušenost s vývojem jsem popsal v tomto článku, který bude tvořit web content také na mém osobním webu. Výsledek je lepší, než jsem sám očekával.</p>
+                      <p>V rámci tvorby tohoto projektu jsem také pracoval s <span class="bold">osobním i produktovým brandem</span> (<a href="https://georgefreedom.com" class="text-decoration-none text-body-primary bold">GeorgeFreedom.com</a>, <a href="https://pagania.cz" class="text-decoration-none text-body-primary bold">PAGANIA.cz</a>). Svou zkušenost s vývojem jsem popsal v tomto článku, který bude tvořit web content na mém osobním webu. Vytváření web aplikací, jejich následný vývoj a růst mě baví a už mám připravené plány na další.</p>
                   </div>
             </div>
 
