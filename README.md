@@ -2,7 +2,9 @@
 Flask & Bootstrap Web App projekt
 
 ## Overview
-Pohanská webová aplikace - Objev svého ochránce a patrona mezi vikingskými, slovanskými a keltskými bohy. Dynamické a plně responzivní stránky.
+Pohanská webová aplikace - Objev svého ochránce a patrona mezi vikingskými, slovanskými a keltskými bohy. Dynamické a plně responzivní stránky. 
+Aplikaci lze spustit zde:
+https://pagan-divination.onrender.com/
 
 ## Files
 
