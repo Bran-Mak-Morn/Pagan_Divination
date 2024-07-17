@@ -25,7 +25,8 @@ Pohanská webová aplikace - Objev svého ochránce a patrona mezi vikingskými,
 
 ## Project Highlights
 
-- **Idea**: Showcase of passion & knowledge turned into a functional and enjoyable web app.
-- **Layout**: Demonstrates the use of friendly and engaging UX.
-- **Bootstrap use**: Shows the ability in using Bootstrap, HTML & CSS.
-- **Responsive web design**: Shows proficiency in creating a modern web that works on a variety of different size displays.
+- **Idea**: Showcase of passion & knowledge turned into a functional and enjoyable web app
+- **Layout**: Demonstrates the use of friendly and engaging UX
+- **Bootstrap use**: Shows the ability in using Bootstrap, HTML & CSS
+- **Responsive web design**: Shows proficiency in creating a modern web that works on a variety of different size displays
+- **Database**: Use of SQLAlchemy to work with SQLite database
