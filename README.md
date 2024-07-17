@@ -7,7 +7,7 @@ Pohanská webová aplikace - Objev svého ochránce a patrona mezi vikingskými,
 ## Files
 
 - `main.py`: main app
-- `init_database.py`: creates a database and populates it with gods
+- `init_database.py`: creates a database with tables in "/instance" and populates it with gods
 - `gods.py`: class that creates gods
   
 - `index.html`: landing page, where you can choose the divination type
