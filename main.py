@@ -6,6 +6,7 @@ import random
 import os
 from init_database import init_db, VikingGod, CelticGod, SlavicGod
 import logging
+from flask import jsonify
 
 
 app = Flask(__name__)
@@ -61,14 +62,14 @@ def divination(tribe):
     elif tribe == "slavic":
         god_data = random.choice(db.session.query(SlavicGod).all())
     else:
-        logger.info("Error god time")
+        logger.info("Error god happened")
         god_data = error_god
 
     god_introduction = introduce_god(god_data.gender)
     return render_template("divination.html", divination=god_data, introduction=god_introduction)
 
 
-@app.route("/kontakt")
+@app.route("/contact")
 def contact():
     """
     Contact page.
@@ -86,6 +87,29 @@ def web_app_development():
     return render_template("web-app-development.html")
 
 
+@app.route("/get-gods")
+def get_gods():
+    """
+    REST API - returns list of gods from chosen tribe.
+    :return: json with list of gods
+    """
+    tribe = request.args.get('tribe')
+    if not tribe:
+        return jsonify({"Error": "Missing 'tribe' parameter"}), 400
+    if tribe == "viking":
+        print("Viking gods")
+        gods = db.session.query(VikingGod).all()
+    elif tribe == "celtic":
+        gods = db.session.query(CelticGod).all()
+    elif tribe == "slavic":
+        gods = db.session.query(SlavicGod).all()
+    else:
+        return jsonify({"Error": f"Unknown tribe: {tribe}"}), 400
+
+    gods_list = [{"id": god.id, "name": god.name, "gender": god.gender, "description": god.description} for god in gods]
+    return jsonify({"gods": gods_list}), 200
+
+
 if __name__ == "__main__":
     DATABASE_PATH = 'instance/gods_database.db'
     if not os.path.exists(DATABASE_PATH):
@@ -95,4 +119,4 @@ if __name__ == "__main__":
     else:
         logger.info("Database exists. Connecting...")
 
-    app.run()
+    app.run(debug=True)

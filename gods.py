@@ -135,7 +135,7 @@ slavic_gods = [rod, lada, triglav, svarog, perun, veles, mokos, nij, dazbog, cho
 
 # ---------------------------
 # Error god / Unknown god
-error_god = God("neznámý bůh", "X", "nebyl stvořen - neznámý bůh")
+error_god = God("Unknown god", "X", "never created - never born")
 # print(len(viking_gods), len(celtic_gods), len(slavic_gods))
 
 
