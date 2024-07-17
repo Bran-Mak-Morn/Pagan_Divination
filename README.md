@@ -32,3 +32,4 @@ https://pagan-divination.onrender.com/
 - **Bootstrap use**: Shows the ability in using Bootstrap, HTML & CSS
 - **Responsive web design**: Shows proficiency in creating a modern web that works on a variety of different size displays
 - **Database**: Use of SQLAlchemy to work with SQLite database
+- **API**: Use of Rest API endpoint to share data
