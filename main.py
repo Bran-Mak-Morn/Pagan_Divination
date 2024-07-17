@@ -1,11 +1,26 @@
 from flask import Flask, render_template, url_for, request, redirect
-from gods import viking_gods, celtic_gods, slavic_gods, error_god
+from gods import error_god
 from flask_bootstrap import Bootstrap5
+from flask_sqlalchemy import SQLAlchemy
 import random
+import os
+from init_database import init_db, VikingGod, CelticGod, SlavicGod
+import logging
 
 
 app = Flask(__name__)
 
+# Set up logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+# Set up database path
+logger.info("Setting up database path")
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///gods_database.db'
+logger.info("Creating SQLAlchemy object for Flask app")
+db = SQLAlchemy(app)
+
+# Set up Bootstrap
 bootstrap = Bootstrap5(app)
 
 
@@ -40,12 +55,13 @@ def divination(tribe):
     :return: divination.html with chosen "god" data
     """
     if tribe == "viking":
-        god_data = random.choice(viking_gods)
+        god_data = random.choice(db.session.query(VikingGod).all())
     elif tribe == "celtic":
-        god_data = random.choice(celtic_gods)
+        god_data = random.choice(db.session.query(CelticGod).all())
     elif tribe == "slavic":
-        god_data = random.choice(slavic_gods)
+        god_data = random.choice(db.session.query(SlavicGod).all())
     else:
+        logger.info("Error god time")
         god_data = error_god
 
     god_introduction = introduce_god(god_data.gender)
@@ -71,5 +87,12 @@ def web_app_development():
 
 
 if __name__ == "__main__":
+    DATABASE_PATH = 'instance/gods_database.db'
+    if not os.path.exists(DATABASE_PATH):
+        logger.info("Database does not exist. Creating...")
+        init_db()
+        logger.info("Database created.")
+    else:
+        logger.info("Database exists. Connecting...")
 
     app.run()

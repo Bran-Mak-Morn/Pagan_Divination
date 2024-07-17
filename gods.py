@@ -7,8 +7,8 @@ class God():
     def __str__(self) -> str:
         return f"god/godess name:\n{self.name}\ngod/goddess description:\n{self.description}"
 
-
-# list of viking gods (19)
+# ---------------------------
+# Viking gods
 thor = God("Thor", "M",
            ".. zvaný též Donor / Donar, je bohem hromu, blesku, války, plodnosti země, deště, počasí a je také ochráncem prostých lidí a rolníků. Přebývá v paláci Bilskirni. Po obloze jezdí ve voze taženém dvěma kozly Tanngjóstem a Tanngrisnem. Jeho ženou je Sif. Jeho děti jsou synové Modi a Magni  a dcera Trůd. K jeho symbolům patří kladivo Mjolni (lomozník), opasek síly, rukavice a kozel. Jeho dnem je čtvrtek (Thursday, Torsdag) a nápojem pivo.")
 tyr = God("Tyr", "M",
@@ -48,10 +48,12 @@ ran = God("Rán", "F",
 eostre = God("Eostre", "F",
              ".. zvaná též Eostra / Ostara je bohyně světla, jara, obnovy. Jejím časem je jarní rovnodennost = Ostara (Velikonoce).")
 
+# list of viking gods (19)
 viking_gods = [thor, tyr, odin, frey, loki, freya, njord, baldr, frigg, hel, bragi, idunn, hodur, heimdall, ull,
                forseti, aegir, ran, eostre]
 
-# list of celtic gods (16)
+# ---------------------------
+# Celtic gods
 taranis = God("Taranis", "M",
               " .. bůh blesku, nebes, přímého fyzického boje, střetu, bitevní vřavy a válečníků a štěstí v boji. Jeho jméno dodnes přežívá v názvech taras, zatarasit, tarasnice a taranovat. Jeho symbolem je slunce, spirála a 'Taranisovo kolo' resp. loukoťové kolo, které vynalezli kelti. Obětovalo se mu upálením a jeho živlem je oheň.")
 teutatis = God("Teutatis", "M",
@@ -85,10 +87,14 @@ grannus = God("Grannus", "M",
 sirona = God("Sirona", "F",
              "..  bohyně léčivých pramenů, jejichž účinek kombinuje s uzdravující silou slunce. Často byla oslavována společně s Grannusem. Mezi její symboly patří had a vejce.")
 
+
+# list of Celtic gods (16)
 celtic_gods = [taranis, teutatis, esus, epona, cernunn, maponos, eiocha,
              lugh, dagda, oghma, morrigan, brigit, bel, danu, grannus, sirona]
 
-# list of slavic gods (16)
+
+# ---------------------------
+# Slavic gods
 rod = God("Rod", "M",
           ".. zvaný též Rid, Rožaj či Radaj je prabůh stvořitel, bůh zrodu, života a znovuzrození. Je vládcem stromu života a stvořitel našeho světa z moře chaosu. Představuje počátek i konec všeho. Rod dodnes přežívá ve slovech národ, rodina, porod či příroda. Jeho potomkem je Prove. Jeho symboly jsou vejce, dubová hůl, dubové žezlo a zlaté vejce. Jeho živlem je voda v podobě nekonečného praoceánu. Rodovým zvířetem je sokol. Je mu zasvěcena neděle. ")
 lada = God("Lada", "F",
@@ -122,9 +128,13 @@ stribog = God("Stribog", "M",
 simargl = God("Simargl", "M",
               ".. zvaný též Semargl, je dvojhlavý bůh ohně a domácího krbu, ochránce před mocnostmi temna. Představuje ohnivý očišťující vichr a božská dvojčata - blížence Sim (teplo a ochránce rostlin) + Rigl (světlo a ochránce dobytka). Simargl to je živý a svatý oheň a očistné vykuřování. Jeho synem je Kupalo a dcerou Magura. Jeho symboly jsou ohnivý kůň se zlatou hřívou a stříbrnou srstí, červené brnění, ohnivý meč / palice a plamen. Jeho živlem je oheň. Simarglovými zvířaty jsou pták ohnivák (fénix) a dvouhlavý orel. Jeho číslem je proto číslo 2. Je mu zasvěcena podzimní rovnodennost a uctívá se v tuto noc posvátným ohněm, který nesmí vyhasnout a u kterého se bdí přes noc - protože tuto jedinou noc v roce Simargl spí.")
 
+
+# list of Slavic gods (16)
 slavic_gods = [rod, lada, triglav, svarog, perun, veles, mokos, nij, dazbog, chors,
                morana, dij, ziva, kascej, stribog, simargl]
 
+# ---------------------------
+# Error god / Unknown god
 error_god = God("neznámý bůh", "X", "nebyl stvořen - neznámý bůh")
 # print(len(viking_gods), len(celtic_gods), len(slavic_gods))
 
