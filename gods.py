@@ -7,6 +7,7 @@ class God():
     def __str__(self) -> str:
         return f"god/godess name:\n{self.name}\ngod/goddess description:\n{self.description}"
 
+
 # ---------------------------
 # Viking gods
 thor = God("Thor", "M",
@@ -135,7 +136,7 @@ slavic_gods = [rod, lada, triglav, svarog, perun, veles, mokos, nij, dazbog, cho
 
 # ---------------------------
 # Error god / Unknown god
-error_god = God("Unknown god", "X", "never created - never born")
+unknown_god = God("Unknown god", "X", "This god was never created - never born")
 # print(len(viking_gods), len(celtic_gods), len(slavic_gods))
 
 
