@@ -6,40 +6,31 @@ import random
 import os
 from init_database import init_db, VikingGod, CelticGod, SlavicGod
 from flask import jsonify
-import logging
-from logging.handlers import RotatingFileHandler
+from config.logging_config import setup_logging
+from config.app_config import Config
 
 
 app = Flask(__name__)
+# TODO move app creation to separate __init__ file
+# TODO move routes to separate file
 
-# Create a logger
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG)  # severity = DEBUG and higher (all logs)
+# Set up logging
+logger = setup_logging()
 
-# Set up FILE handler - for Errors and higher
-file_handler = RotatingFileHandler('app_errors.log', maxBytes=1000000, backupCount=5)
-file_handler.setLevel(logging.ERROR)  # severity =  ERROR and higher
-file_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-file_handler.setFormatter(file_formatter)
+# Configuring app
+app.config.from_object(Config)
+logger.info("App configuration done")
 
-# Set up CONSOLE logging - for Info and higher
-console_handler = logging.StreamHandler()
-console_handler.setLevel(logging.INFO)  # severity = INFO and higher
-console_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-console_handler.setFormatter(console_formatter)
-
-# Add handlers to the logger
-logger.addHandler(file_handler)
-logger.addHandler(console_handler)
-
-# Set up database path
-logger.info("Setting up database path")
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///gods_database.db'
-logger.info("Creating SQLAlchemy object for Flask app")
 db = SQLAlchemy(app)
+logger.info("Creating SQLAlchemy object for Flask app")
 
 # Set up Bootstrap
 bootstrap = Bootstrap5(app)
+
+"""
+secret_key = app.config.get('SECRET_KEY')
+print(f'SECRET_KEY: {secret_key}')
+"""
 
 
 def introduce_god(gender):
@@ -170,4 +161,4 @@ if __name__ == "__main__":
     else:
         logger.info("Database exists. Connecting...")
 
-    app.run(debug=True)
+    app.run(debug=os.getenv("FLASK_DEBUG"))
