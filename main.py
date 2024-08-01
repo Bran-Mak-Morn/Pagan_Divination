@@ -2,9 +2,11 @@ from flask import Flask, render_template, url_for, request, redirect
 from gods import unknown_god
 from flask_bootstrap import Bootstrap5
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.sql.expression import func
+from sqlalchemy.sql import exists
 import random
 import os
-from init_database import init_db, VikingGod, CelticGod, SlavicGod
+from init_database import init_db, God
 from flask import jsonify
 from config.logging_config import setup_logging
 from config.app_config import Config
@@ -13,6 +15,7 @@ from config.app_config import Config
 app = Flask(__name__)
 # TODO move app creation to separate __init__ file
 # TODO move routes to separate file
+# TODO make it multilingual using Flask Babel
 
 # Set up logging
 logger = setup_logging()
@@ -21,16 +24,23 @@ logger = setup_logging()
 app.config.from_object(Config)
 logger.info("App configuration done")
 
+# Set up database
 db = SQLAlchemy(app)
 logger.info("Creating SQLAlchemy object for Flask app")
 
 # Set up Bootstrap
 bootstrap = Bootstrap5(app)
+logger.info("Bootstrap setup done")
 
-"""
-secret_key = app.config.get('SECRET_KEY')
-print(f'SECRET_KEY: {secret_key}')
-"""
+
+def check_tribe_exists(tribe):
+    """
+    Checks presence of tribe in database
+    :param tribe:
+    :return: True
+    """
+    count = db.session.query(God).filter(God.tribe == tribe).count()
+    return count > 0
 
 
 def introduce_god(gender):
@@ -63,20 +73,15 @@ def divination(tribe):
     :param tribe: string
     :return: divination.html with chosen "god" data
     """
-    god_data = unknown_god
-    if tribe not in ["viking", "celtic", "slavic"]:
+
+    if not check_tribe_exists(tribe):
         logger.info(f"Info: Unknown tribe of gods: {tribe}")
         return jsonify({"Info": f"Unknown tribe of gods: {tribe}"}), 400
 
-    if tribe == "viking":
-        god_data = random.choice(db.session.query(VikingGod).all())
-    elif tribe == "celtic":
-        god_data = random.choice(db.session.query(CelticGod).all())
-    elif tribe == "slavic":
-        god_data = random.choice(db.session.query(SlavicGod).all())
-
-    god_introduction = introduce_god(god_data.gender)
-    return render_template("divination.html", divination=god_data, introduction=god_introduction)
+    random_god = db.session.execute(db.select(God).where(God.tribe == tribe)
+                                    .order_by(func.random()).limit(1)).scalar()
+    god_introduction = introduce_god(random_god.gender)
+    return render_template("divination.html", divination=random_god, introduction=god_introduction)
 
 
 @app.route("/contact")
@@ -104,33 +109,25 @@ def get_gods():
     :return: json with list of gods
     """
     tribe = request.args.get('tribe')
-    gods = None
 
     if not tribe:
-        logger.warning("Warning: Missing 'tribe' parameter")
-        return jsonify({"Warning": "Missing 'tribe' parameter"}), 400
-    if tribe not in ["viking", "celtic", "slavic"]:
+        logger.warning("Warning: Missing 'tribe' parameter in URL")
+        return jsonify({"Warning": "Missing 'tribe' parameter in URL"}), 400
+
+    if not check_tribe_exists(tribe):
         logger.warning(f"Warning: Unknown tribe of gods: '{tribe}'")
         return jsonify({"Warning": f"Unknown tribe of gods: '{tribe}' "}), 400
 
     try:
-        if tribe == "viking":
-            gods = db.session.query(VikingGod).all()
-        elif tribe == "celtic":
-            gods = db.session.query(CelticGod).all()
-        elif tribe == "slavic":
-            gods = db.session.query(SlavicGod).all()
+        gods = db.session.execute(db.select(God).where(God.tribe == tribe)).scalars().all()
+
     except Exception as e:
         logger.error(f"Error: Database reading failed: {str(e)}")
         return jsonify({"Error": "Internal server error", "message": "Database reading failed"}), 500
 
-    gods_list = [{"id": god.id, "name": god.name, "gender": god.gender, "description": god.description}
+    gods_list = [{"id": god.id, "name": god.name, "gender": god.gender, "cz_description": god.cz_description}
                  for god in gods]
-    if gods_list:
-        return jsonify({"gods": gods_list}), 200
-    else:
-        logger.warning(f"Warning: Empty list of gods for tribe: {tribe}")
-        return jsonify({"Warning": "No gods found for the specified tribe."}), 200
+    return jsonify({"gods": gods_list}), 200
 
 
 # Global Error Handlers
@@ -161,4 +158,4 @@ if __name__ == "__main__":
     else:
         logger.info("Database exists. Connecting...")
 
-    app.run(debug=os.getenv("FLASK_DEBUG"))
+    app.run(debug=app.config.get("FLASK_DEBUG"))
