@@ -1,4 +1,5 @@
-"""Pagan Divination Logger & Handlers configuration."""
+""" Pagan Divination - Logger & Handlers configuration """
+
 
 import os
 import logging
@@ -16,7 +17,7 @@ def setup_logging():
 
     # Set up FILE handler - for Errors and higher
     file_handler = RotatingFileHandler('logs/app_errors.log', maxBytes=1000000, backupCount=5)
-    file_handler.setLevel(logging.WARNING)  # severity =  WARNING and higher
+    file_handler.setLevel(logging.ERROR)  # severity =  ERROR and higher
     file_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
     file_handler.setFormatter(file_formatter)
 

@@ -1,13 +1,13 @@
-"""Pagan Divination App configuration."""
+""" Pagan Divination - App configuration """
+
 
 from os import environ, path
 from dotenv import load_dotenv
 
-# Sets location of ".env" file (in root directory in this case)
-# Get the path to the directory containing app_config.py
-config_dir = path.abspath(path.dirname(__file__))
-# Load .env file located one directory up from config_dir
-load_dotenv(path.join(config_dir, '..', '.env'))
+# locates ".env" file
+dotenv_path = path.join(path.dirname(__file__), '../.env')
+# Loads .env file variables into environment variables
+load_dotenv(dotenv_path)
 
 
 class Config:
@@ -16,7 +16,7 @@ class Config:
     """
     # General Config
     FLASK_APP = environ.get("FLASK_APP")
-    FLASK_DEBUG = environ.get("FLASK_DEBUG")
+    FLASK_DEBUG = True
 
     ENVIRONMENT = environ.get("ENVIRONMENT")
     SECRET_KEY = environ.get("SECRET_KEY")
