@@ -13,6 +13,7 @@ Tento projekt je licencován pod licencí MIT. Použité knihovny mají své vla
 - SQLAlchemy: MIT License
 - Bootstrap: MIT License
 - SQLite: Public Domain
+- Python: Python Software Foundation License
 
 ## Files
 
