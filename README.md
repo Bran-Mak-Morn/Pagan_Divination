@@ -43,26 +43,17 @@ Flask, SQLAlchemy, Bootstrap, and other packages listed in requirements.txt
 
 ### Usage - Step-by-Step:
 1. Clone the repository 
-- First, clone the repository:
-  
-bash: git clone https://github.com/your-username/pagan-divination.git
+- bash: git clone https://github.com/Bran-Mak-Morn/Pagan_Divination
+- bash: cd pagan-divination
 
-bash: cd pagan-divination
-
-2. Create a virtual environment and install dependencies
-- It’s recommended to create a virtual environment and install dependencies from the requirements.txt file:
-  
-bash: python -m venv venv
-
-bash: source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-bash: pip install -r requirements.txt
+2. Create a virtual environment and install dependencies from the requirements.txt file
+- bash: python -m venv venv
+- bash: source venv/bin/activate  # On Windows: venv\Scripts\activate
+- bash: pip install -r requirements.txt
 
 
 3. Run the application
-- Start the application:
-  
-bash: python main.py
+- bash: python main.py
 
 The app will be accessible at http://127.0.0.1:5000/, using Flask’s default configuration.
 
