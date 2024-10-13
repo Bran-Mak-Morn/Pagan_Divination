@@ -73,4 +73,4 @@ The app will be accessible at http://127.0.0.1:5000/, using Flask’s default co
 - **Bootstrap use**: Shows the ability in using Bootstrap, HTML & CSS
 - **Responsive web design**: Shows proficiency in creating a modern web that works on a variety of different size displays
 - **Database**: Use of SQLAlchemy to work with SQLite database
-- **API**: Use of Rest API endpoint to share data
+- **API**: Use of API endpoint to share raw data in JSON format
