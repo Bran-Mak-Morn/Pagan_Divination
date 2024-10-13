@@ -6,6 +6,14 @@ Pohanská webová aplikace - Objev svého ochránce a patrona mezi vikingskými,
 Aplikaci lze spustit zde:
 https://pagan-divination.onrender.com/
 
+## Licence
+Tento projekt je licencován pod licencí MIT. Použité knihovny mají své vlastní licence:
+
+- Flask: BSD License
+- SQLAlchemy: MIT License
+- Bootstrap: MIT License
+- SQLite: Public Domain
+
 ## Files
 
 - `main.py`: main app
